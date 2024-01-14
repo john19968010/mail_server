@@ -1,0 +1,1 @@
+This mail server is utilized for dispatching emails via Gmail. The code will be deployed on a Google Cloud Platform (GCP) Cloud Function. We're planning to execute a project that operates through GitHub Actions to obtain the results. Additionally, we aim to replace this template with Go programming language in the upcoming month
