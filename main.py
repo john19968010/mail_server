@@ -37,14 +37,15 @@ def send_mail():
         Response object using
         `make_response <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>`.
     """
+    data = request.get_json()
     domain, port, acc, pwd, receiver, title, content = (
-        request.form.get("domain"),
-        request.form.get("port"),
-        request.form.get("account"),
-        request.form.get("password"),
-        request.form.get("receiver"),
-        request.form.get("title", ""),
-        request.form.get("content", ""),
+        data.get("domain"),
+        data.get("port"),
+        data.get("account"),
+        data.get("password"),
+        data.get("receiver"),
+        data.get("title", ""),
+        data.get("content", ""),
     )
     if domain is None or port is None or acc is None or pwd is None or receiver is None:
         raise BaseException("Missing parameters", 400)
